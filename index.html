@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>जय छठी मैया 🙏 | छठ पूजा 2026</title>
+<meta name="description" content="छठ पूजा 2026 — सूर्य देव एवं छठी मैया की पावन आराधना। पूजा तिथियाँ, गीत, गैलरी और अर्घ्य की जानकारी।">
+
+<!-- Google Fonts: Devanagari + Latin pairing -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="night">
+
+<!-- ============================================================
+     🪔 AMBIENT PARTICLE / DIYA LAYER (populated by script.js)
+     ============================================================ -->
+<div class="ambient-layer" id="ambientLayer" aria-hidden="true"></div>
+
+<!-- ============================================================
+     🧭 NAVIGATION
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <nav class="navbar">
+    <a href="#home" class="brand">
+      <span class="brand-mark">🪔</span>
+      <span class="brand-text">छठ महापर्व</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">🏠 Home</a></li>
+      <li><a href="#dates" class="nav-link">📅 Dates</a></li>
+      <li><a href="#songs" class="nav-link">🎵 Songs</a></li>
+      <li><a href="#arghya" class="nav-link">☀️ Arghya</a></li>
+      <li><a href="#gallery" class="nav-link">📸 Gallery</a></li>
+      <li><a href="#info" class="nav-link">🙏 Chhath Info</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button class="icon-btn" id="themeToggle" title="Day / Night Mode" aria-label="Toggle day and night mode">🌙</button>
+      <button class="icon-btn" id="soundToggle" title="Ambient Sound" aria-label="Toggle ambient sound">🔇</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============================================================
+     🌅 HERO SECTION (Homepage opens directly here — no splash)
+     ============================================================ -->
+<section id="home" class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+
+  <!-- Floating diyas / flowers / glow particles injected via JS -->
+  <div class="hero-floaters" id="heroFloaters" aria-hidden="true"></div>
+
+  <div class="hero-content reveal">
+    <p class="eyebrow">सूर्य षष्ठी महापर्व · 2026</p>
+    <h1 class="hero-title">🙏 जय छठी मैया 🙏</h1>
+    <p class="hero-subtitle">सूर्य देव एवं छठी मैया की पावन आराधना</p>
+    <p class="hero-message">
+      आस्था का यह महापर्व त्याग, संयम और कृतज्ञता का प्रतीक है — जहाँ जल में खड़े होकर
+      डूबते और उगते सूर्य को अर्घ्य दिया जाता है, और छठी मैया से परिवार की सुख-समृद्धि
+      का आशीर्वाद माँगा जाता है।
+    </p>
+
+    <div class="hero-actions">
+      <a href="#dates" class="btn btn-primary">📅 पूजा तिथियाँ देखें</a>
+      <a href="#diya" class="btn btn-outline">🪔 दीप जलाएँ</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>नीचे स्क्रॉल करें</span>
+    <div class="scroll-line"></div>
+  </div>
+
+  <!-- Gentle water wave at the bottom of hero -->
+  <div class="wave-wrap" aria-hidden="true">
+    <svg class="wave wave-back" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"></path></svg>
+    <svg class="wave wave-front" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,40 C400,110 800,-10 1200,40 L1200,120 L0,120 Z"></path></svg>
+  </div>
+</section>
+
+<!-- ============================================================
+     ⏳ COUNTDOWN
+     ============================================================ -->
+<section class="countdown-section">
+  <div class="container reveal">
+    <p class="section-eyebrow">प्रतीक्षा</p>
+    <h2 class="section-title">छठ पूजा 2026 की उलटी गिनती</h2>
+    <p class="section-sub">मुख्य संध्या अर्घ्य दिवस तक शेष समय</p>
+
+    <div class="countdown" id="countdown">
+      <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label">दिन</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label">घंटे</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span class="cd-num" id="cdMinutes">00</span><span class="cd-label">मिनट</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span class="cd-num" id="cdSeconds">00</span><span class="cd-label">सेकंड</span></div>
+    </div>
+    <p class="countdown-msg" id="countdownMsg"></p>
+  </div>
+</section>
+
+<!-- ============================================================
+     📅 CHHATH PUJA 2026 DATES / TIMELINE
+     ============================================================ -->
+<section id="dates" class="dates-section">
+  <div class="container">
+    <p class="section-eyebrow reveal">कार्यक्रम</p>
+    <h2 class="section-title reveal">छठ पूजा 2026 — चार दिवसीय अनुष्ठान</h2>
+    <p class="section-sub reveal">
+      नोट: सूर्योदय व सूर्यास्त तथा अर्घ्य का समय शहर अनुसार भिन्न हो सकता है। कृपया अपने
+      स्थानीय पंचांग से समय की पुष्टि करें।
+    </p>
+
+    <div class="timeline" id="timeline">
+      <!-- Timeline items are also defined here for no-JS fallback / SEO,
+           but visuals & connecting line are enhanced by script.js -->
+
+      <div class="timeline-item reveal">
+        <div class="timeline-icon">🛁</div>
+        <div class="timeline-card glass">
+          <div class="tl-top">
+            <span class="tl-day">Day 1 · शुक्रवार</span>
+            <span class="tl-date">13 नवंबर 2026</span>
+          </div>
+          <h3>नहाय-खाय</h3>
+          <p>व्रती पवित्र स्नान कर शुद्ध सात्विक भोजन (कद्दू-भात, चना दाल) ग्रहण करते हैं — यह चार दिवसीय अनुष्ठान की शुद्ध शुरुआत है।</p>
+          <div class="tl-tags">
+            <span>🕉️ पवित्र स्नान</span>
+            <span>🍚 कद्दू-भात</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-icon">🌙</div>
+        <div class="timeline-card glass">
+          <div class="tl-top">
+            <span class="tl-day">Day 2 · शनिवार</span>
+            <span class="tl-date">14 नवंबर 2026</span>
+          </div>
+          <h3>खरना / लोहंडा</h3>
+          <p>दिनभर के निर्जला उपवास के बाद संध्या में गुड़ की खीर व रोटी का प्रसाद ग्रहण किया जाता है। इसके बाद 36 घंटे का कठिन निर्जला व्रत आरंभ होता है।</p>
+          <div class="tl-tags">
+            <span>🍯 गुड़ की खीर</span>
+            <span>⏳ 36 घंटे व्रत आरंभ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-icon">🌇</div>
+        <div class="timeline-card glass">
+          <div class="tl-top">
+            <span class="tl-day">Day 3 · रविवार · मुख्य दिवस</span>
+            <span class="tl-date">15 नवंबर 2026</span>
+          </div>
+          <h3>संध्या अर्घ्य</h3>
+          <p>व्रती परिवार सहित नदी अथवा घाट पर पहुँचकर डूबते हुए सूर्य को सूप में ठेकुआ, फल व गन्ना सजाकर अर्घ्य अर्पित करते हैं।</p>
+          <div class="tl-tags">
+            <span>🌅 सूर्यास्त अर्घ्य</span>
+            <span>🧺 सूप व प्रसाद</span>
+          </div>
+          <p class="tl-timing">⏰ अनुमानित सूर्यास्त: लगभग 5:15 – 5:30 सायं (शहर अनुसार भिन्न)</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-icon">🌄</div>
+        <div class="timeline-card glass">
+          <div class="tl-top">
+            <span class="tl-day">Day 4 · सोमवार</span>
+            <span class="tl-date">16 नवंबर 2026</span>
+          </div>
+          <h3>उषा अर्घ्य / पारण</h3>
+          <p>भोर में उगते सूर्य को अंतिम अर्घ्य देकर 36 घंटे का व्रत सम्पन्न होता है। प्रसाद वितरण के साथ पारण किया जाता है।</p>
+          <div class="tl-tags">
+            <span>🌞 सूर्योदय अर्घ्य</span>
+            <span>🙏 व्रत पारण</span>
+          </div>
+          <p class="tl-timing">⏰ अनुमानित सूर्योदय: लगभग 6:00 – 6:15 प्रातः (शहर अनुसार भिन्न)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ☀️ SUNRISE / ARGHYA ANIMATION
+     ============================================================ -->
+<section id="arghya" class="arghya-section">
+  <div class="container">
+    <p class="section-eyebrow reveal">दृश्य</p>
+    <h2 class="section-title reveal">अर्घ्य का पावन क्षण</h2>
+    <p class="section-sub reveal">घाट पर सूर्योदय, स्वर्णिम आभा और जल में प्रतिबिंब</p>
+  </div>
+
+  <div class="arghya-scene reveal" id="arghyaScene">
+    <div class="arghya-sky"></div>
+    <div class="arghya-sun" id="arghyaSun"></div>
+    <div class="arghya-rays"></div>
+    <div class="arghya-hills"></div>
+    <div class="arghya-water">
+      <div class="arghya-reflection" id="arghyaReflection"></div>
+      <div class="arghya-diyas" id="arghyaDiyas"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     🪔 INTERACTIVE DIYA
+     ============================================================ -->
+<section id="diya" class="diya-section">
+  <div class="container reveal">
+    <p class="section-eyebrow">भक्ति भाव</p>
+    <h2 class="section-title">छठी मैया के नाम एक दीप जलाएँ</h2>
+    <p class="section-sub">बटन दबाएँ और श्रद्धा से एक दीपक प्रज्वलित करें</p>
+    <button class="btn btn-diya" id="lightDiyaBtn">🪔 दीप जलाएँ</button>
+    <div class="diya-stage" id="diyaStage" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     🎵 SPOTIFY MUSIC SECTION
+     ============================================================ -->
+<section id="songs" class="songs-section">
+  <div class="container">
+    <p class="section-eyebrow reveal">संगीत</p>
+    <h2 class="section-title reveal">🎵 छठ गीत</h2>
+    <p class="section-sub reveal">पारंपरिक छठ लोकगीतों का आनंद लें</p>
+
+    <div class="spotify-card glass reveal">
+      <!--
+        ⚙️ CONFIG: Paste your Spotify PLAYLIST embed URL inside script.js
+        under CONFIG.spotifyPlaylistUrl — the iframe src is set automatically
+        by script.js (id="spotifyFrame"). Do not hardcode it here.
+      -->
+      <iframe
+        id="spotifyFrame"
+        style="border-radius:16px"
+        width="100%"
+        height="380"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        title="Chhath Geet Spotify Playlist">
+      </iframe>
+      <p class="note">🎧 यह प्लेलिस्ट सीधे Spotify द्वारा चलाई जाती है — प्लेबैक व अधिकार पूर्णतः Spotify के नियंत्रण में हैं।</p>
+    </div>
+
+    <!-- ============================================================
+         🎧 CUSTOM MUSIC PLAYER (optional, for your own legal audio)
+         ============================================================ -->
+    <div class="player-card glass reveal" id="customPlayer">
+      <div class="player-top">
+        <img src="" alt="" class="player-cover" id="playerCover">
+        <div class="player-meta">
+          <h3 id="playerTitle">गीत का शीर्षक</h3>
+          <p id="playerArtist">कलाकार का नाम</p>
+        </div>
+      </div>
+
+      <div class="player-progress-row">
+        <span id="playerCurrent">0:00</span>
+        <input type="range" id="playerSeek" class="seek" value="0" min="0" max="100" step="0.1">
+        <span id="playerDuration">0:00</span>
+      </div>
+
+      <div class="player-controls">
+        <button class="icon-btn" id="playerPrev" aria-label="Previous song">⏮</button>
+        <button class="icon-btn play-btn" id="playerPlay" aria-label="Play or pause">▶️</button>
+        <button class="icon-btn" id="playerNext" aria-label="Next song">⏭</button>
+        <div class="volume-row">
+          <span>🔊</span>
+          <input type="range" id="playerVolume" class="seek" value="80" min="0" max="100" step="1">
+        </div>
+      </div>
+
+      <ul class="playlist" id="playlistUL"></ul>
+      <audio id="audioEl" preload="metadata"></audio>
+      <p class="note">ℹ️ यहाँ केवल वे ऑडियो फ़ाइलें जोड़ें जिनके आप कानूनी रूप से मालिक हैं या जिन्हें उपयोग की अनुमति प्राप्त है।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     🌊 GHAT / WATER DECORATIVE SECTION
+     ============================================================ -->
+<section class="ghat-section">
+  <div class="ghat-content reveal">
+    <p class="section-eyebrow">घाट</p>
+    <h2 class="section-title">पावन घाट की शांत आभा</h2>
+  </div>
+  <div class="ghat-water" aria-hidden="true">
+    <div class="ghat-floaters" id="ghatFloaters"></div>
+    <svg class="wave wave-back" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"></path></svg>
+    <svg class="wave wave-front" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,40 C400,110 800,-10 1200,40 L1200,120 L0,120 Z"></path></svg>
+  </div>
+</section>
+
+<!-- ============================================================
+     📸 CHHATH PHOTO GALLERY
+     ============================================================ -->
+<section id="gallery" class="gallery-section">
+  <div class="container">
+    <p class="section-eyebrow reveal">झलकियाँ</p>
+    <h2 class="section-title reveal">📸 छठ पूजा गैलरी</h2>
+    <p class="section-sub reveal">घाट, आस्था और उत्सव के पावन क्षण</p>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Populated dynamically from CONFIG.galleryImages in script.js -->
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close gallery">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <img src="" alt="" id="lbImage">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">›</button>
+</div>
+
+<!-- ============================================================
+     📿 DEVOTIONAL QUOTES
+     ============================================================ -->
+<section class="quotes-section">
+  <div class="container">
+    <p class="section-eyebrow reveal">आशीर्वाद</p>
+    <h2 class="section-title reveal">छठ पूजा की शुभकामनाएँ</h2>
+
+    <div class="quotes-grid">
+      <div class="quote-card glass reveal">
+        <span class="quote-icon">🌸</span>
+        <p>छठी मैया की कृपा सदैव आपके परिवार पर बनी रहे।</p>
+      </div>
+      <div class="quote-card glass reveal">
+        <span class="quote-icon">☀️</span>
+        <p>सूर्य देव का आशीर्वाद आपके जीवन को तेजोमय करे।</p>
+      </div>
+      <div class="quote-card glass reveal">
+        <span class="quote-icon">🏡</span>
+        <p>छठ के पावन पर्व पर परिवार में सुख-समृद्धि बनी रहे।</p>
+      </div>
+      <div class="quote-card glass reveal">
+        <span class="quote-icon">🪔</span>
+        <p>स्वास्थ्य, शांति और सकारात्मकता का आशीर्वाद प्राप्त हो।</p>
+      </div>
+      <div class="quote-card glass reveal">
+        <span class="quote-icon">🙏</span>
+        <p>लोक आस्था के इस महापर्व की हार्दिक शुभकामनाएँ।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     🌅 CHHATH PUJA INFORMATION
+     ============================================================ -->
+<section id="info" class="info-section">
+  <div class="container">
+    <p class="section-eyebrow reveal">जानकारी</p>
+    <h2 class="section-title reveal">छठ पूजा को समझें</h2>
+
+    <div class="info-grid">
+      <div class="info-card glass reveal">
+        <h3>🌞 छठ पूजा क्या है?</h3>
+        <p>छठ पूजा सूर्य देव व छठी मैया को समर्पित एक प्राचीन लोक-आस्था का पर्व है, जिसमें प्रकृति, जल और सूर्य की उपासना कर परिवार की सुख-समृद्धि की कामना की जाती है।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🛁 नहाय-खाय</h3>
+        <p>पर्व का पहला दिन — पवित्र स्नान कर शुद्ध सात्विक भोजन ग्रहण किया जाता है, जो तन व मन की शुद्धि का प्रतीक है।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🌙 खरना</h3>
+        <p>दिनभर उपवास के बाद संध्या में गुड़ की खीर व रोटी का प्रसाद ग्रहण कर 36 घंटे के निर्जला व्रत की शुरुआत होती है।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🌇 संध्या अर्घ्य</h3>
+        <p>डूबते सूर्य को जल व दूध से अर्घ्य देने की परंपरा — कृतज्ञता और समर्पण का प्रतीक।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🌄 उषा अर्घ्य</h3>
+        <p>उगते सूर्य को अंतिम अर्घ्य देकर व्रत का समापन किया जाता है — नई शुरुआत व आशा का प्रतीक।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🙏 पारण</h3>
+        <p>उषा अर्घ्य के पश्चात प्रसाद ग्रहण कर 36 घंटे का कठिन व्रत सम्पन्न किया जाता है।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🍘 ठेकुआ</h3>
+        <p>गेहूँ के आटे व गुड़ से बना पारंपरिक प्रसाद, जो पूर्ण शुद्धता के साथ तैयार किया जाता है।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🧺 प्रसाद</h3>
+        <p>ठेकुआ, फल, गन्ना व अन्य सामग्री से सजा सूप — अर्घ्य के समय सूर्य देव को अर्पित किया जाता है।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🎋 गन्ना</h3>
+        <p>घाट को सजाने और अर्घ्य की सामग्री में गन्ने का विशेष महत्व है — समृद्धि का प्रतीक माना जाता है।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🧺 सूप</h3>
+        <p>बाँस से बना पारंपरिक सूप, जिसमें प्रसाद सजाकर सूर्य देव को अर्घ्य दिया जाता है।</p>
+      </div>
+      <div class="info-card glass reveal">
+        <h3>🌊 घाट की परंपरा</h3>
+        <p>नदी, तालाब या जलाशय के घाट पर परिवार संग एकत्रित होकर अर्घ्य देना इस पर्व की मूल आत्मा है।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     🍘 CHHATH PRASAD SECTION
+     ============================================================ -->
+<section class="prasad-section">
+  <div class="container">
+    <p class="section-eyebrow reveal">प्रसाद</p>
+    <h2 class="section-title reveal">पारंपरिक छठ प्रसाद</h2>
+
+    <div class="prasad-grid">
+      <div class="prasad-card glass reveal"><span>🍘</span><h4>ठेकुआ</h4><p>गेहूँ व गुड़ से निर्मित मुख्य प्रसाद</p></div>
+      <div class="prasad-card glass reveal"><span>🍯</span><h4>गुड़</h4><p>खरना के प्रसाद की मुख्य सामग्री</p></div>
+      <div class="prasad-card glass reveal"><span>🎋</span><h4>गन्ना</h4><p>घाट की सजावट व अर्घ्य सामग्री</p></div>
+      <div class="prasad-card glass reveal"><span>🍌</span><h4>केला</h4><p>सूप में अर्पित प्रमुख फल</p></div>
+      <div class="prasad-card glass reveal"><span>🥥</span><h4>नारियल</h4><p>शुभता व पवित्रता का प्रतीक</p></div>
+      <div class="prasad-card glass reveal"><span>🧺</span><h4>सूप</h4><p>प्रसाद सजाने का पारंपरिक पात्र</p></div>
+      <div class="prasad-card glass reveal"><span>🍊</span><h4>अन्य फल</h4><p>संतरा, सेब, नारंगी आदि मौसमी फल</p></div>
+      <div class="prasad-card glass reveal"><span>🪔</span><h4>दीप</h4><p>घाट पर प्रज्वलित मिट्टी के दीये</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     📜 FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="footer-floaters" aria-hidden="true"></div>
+  <div class="container">
+    <h2 class="footer-title">🙏 जय छठी मैया 🙏</h2>
+    <p class="footer-line">सूर्य देव की कृपा सब पर बनी रहे।</p>
+
+    <nav class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#dates">Dates</a>
+      <a href="#songs">Songs</a>
+      <a href="#arghya">Arghya</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#info">Chhath Info</a>
+    </nav>
+
+    <p class="footer-made">Made with ❤️ for Chhath Puja</p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="ऊपर जाएँ">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
